@@ -4,8 +4,8 @@ class Solution {
         
         // Start always with the sum of the first value
         int result = nums[0];
-        int currSum = result;
-        for(int i = 1; i < nums.length; i++){
+        int currSum = 0;
+        for(int i = 0; i < nums.length; i++){
             // If at any point the current sum drops below 0, start over the subarray
             if(currSum <= 0){
                 currSum = nums[i];
