@@ -5,7 +5,7 @@ class Solution {
         int result = nums[0];
         int currSum = result;
         for(int i = 1; i < nums.length; i++){
-            if(nums[i] >= currSum && currSum <= 0){
+            if(currSum <= 0){
                 currSum = nums[i];
             } else {
                 currSum += nums[i];
