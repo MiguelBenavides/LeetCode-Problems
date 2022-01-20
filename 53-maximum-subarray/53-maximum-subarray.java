@@ -6,7 +6,8 @@ class Solution {
         int result = nums[0];
         int currSum = result;
         for(int i = 1; i < nums.length; i++){
-            if(currSum <= 0){ // If at any point the current sum drops below 0, start over the subarray
+            // If at any point the current sum drops below 0, start over the subarray
+            if(currSum <= 0){
                 currSum = nums[i];
             } else {
                 currSum += nums[i];
