@@ -1,7 +1,12 @@
 class Solution:
     def reverseBits(self, n: int) -> int:
-        res = 0
-        for i in range(32):
-            res |= (n & 1) << (31 - i)
-            n >>= 1
-        return res
+        MSBmask = pow(2, 31)
+        LSBmask = 1
+        while MSBmask > LSBmask:
+            MSB = n & MSBmask
+            LSB = n & LSBmask
+            if MSB / MSBmask != LSB / LSBmask:
+                n ^= MSBmask | LSBmask
+            MSBmask >>= 1
+            LSBmask <<= 1
+        return n
